@@ -384,7 +384,8 @@ h3 {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1rem 1.35rem;
+  min-height: 88px;
+  padding: 0.8rem 1.35rem;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.34);
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -406,6 +407,36 @@ h3 {
   font-size: 1.35rem;
   font-weight: 700;
   letter-spacing: 0.02em;
+}
+
+.navbar > .logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 220px;
+  min-width: 220px;
+  height: 80px;
+  overflow: hidden;
+  padding-left: 0;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.navbar > .logo img {
+  height: 80px;
+  width: auto;
+  margin-left: 18px;
+  object-fit: contain;
+  transform: scale(1.8);
+  transform-origin: left center;
+  display: block;
+}
+
+.navbar,
+.nav-container {
+  display: flex;
+  align-items: center;
 }
 
 .nav-menu {
@@ -2249,7 +2280,8 @@ body.is-loaded .page-hero .reveal {
   }
 
   .navbar {
-    padding: 0.9rem 1rem;
+    min-height: 80px;
+    padding: 0.68rem 1rem;
     border-radius: 28px;
     flex-wrap: wrap;
   }
@@ -2342,6 +2374,17 @@ body.is-loaded .page-hero .reveal {
   .testimonial-wrapper {
     --slides-per-view: 1;
     --testimonial-gap: 14px;
+  }
+
+  .navbar > .logo {
+    width: 160px;
+    min-width: 160px;
+    height: 60px;
+  }
+
+  .navbar > .logo img {
+    height: 60px;
+    transform: scale(1.5);
   }
 }
 
