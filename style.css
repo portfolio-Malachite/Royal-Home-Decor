@@ -384,8 +384,8 @@ h3 {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  min-height: 88px;
-  padding: 0.8rem 1.35rem;
+  min-height: 100px;
+  padding: 0.72rem 1.35rem;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.34);
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -413,78 +413,98 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 220px;
-  min-width: 220px;
-  height: 80px;
+  width: 380px;
+  min-width: 380px;
+  height: 120px;
   overflow: hidden;
-  padding-left: 0;
+  padding-left: 28px;
   margin-right: 0.5rem;
   flex-shrink: 0;
   line-height: 0;
 }
 
 .navbar > .logo img {
-  height: 80px;
+  height: 105px;
   width: auto;
-  margin-left: 18px;
   object-fit: contain;
-  transform: scale(1.8);
+  margin-left: 26px;
+  transform: scale(2.35);
   transform-origin: left center;
   display: block;
 }
 
 .navbar,
-.nav-container {
+.nav-container,
+.navbar-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  min-height: 100px;
+}
+
+.nav-menu,
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 42px;
 }
 
 .nav-menu {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
+  flex: 1;
+  justify-content: center;
+  margin: 0 1.5rem;
 }
 
-.nav-link {
+.nav-link,
+.nav-links a {
   position: relative;
   color: var(--text-secondary);
-  font-size: 0.97rem;
+  font-size: 1.15rem;
   font-weight: 600;
+  line-height: 1;
+  padding: 0;
 }
 
-.nav-link::after {
+.nav-link::after,
+.nav-links a::after {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: -0.45rem;
-  width: 100%;
-  height: 2px;
+  left: 50%;
+  bottom: -8px;
+  width: 55%;
+  height: 3px;
   border-radius: 999px;
   background: linear-gradient(90deg, transparent, var(--gold));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--transition);
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition: transform var(--transition), opacity var(--transition);
+  opacity: 0;
 }
 
 .nav-link:hover,
 .nav-link:focus-visible,
-.nav-link[aria-current="page"] {
+.nav-link[aria-current="page"],
+.nav-links a.active {
   color: var(--text-primary);
 }
 
 .nav-link:hover::after,
 .nav-link:focus-visible::after,
-.nav-link[aria-current="page"]::after {
-  transform: scaleX(1);
+.nav-link[aria-current="page"]::after,
+.nav-links a.active::after {
+  transform: translateX(-50%) scaleX(1);
+  opacity: 1;
 }
 
-.nav-cta {
+.nav-cta,
+.contact-btn {
   min-height: 46px;
-  padding: 0.72rem 1.26rem;
+  padding: 16px 30px;
   line-height: 1.15;
   white-space: nowrap;
-  font-size: 0.98rem;
-  font-weight: 700;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 999px;
   flex-shrink: 0;
 }
 
@@ -1158,6 +1178,12 @@ h3 {
     url("images/projects/nirala-estate-kitchen.jpg") center 52% / cover no-repeat;
 }
 
+[data-page="apex-gallery"] .hero-gallery {
+  background:
+    linear-gradient(rgba(248, 245, 240, 0.78), rgba(248, 245, 240, 0.84)),
+    url("images/projects/apex-apphabe-bedroom.jpg") center 52% / cover no-repeat;
+}
+
 .gallery-page-hero {
   display: grid;
   gap: 1rem;
@@ -1275,7 +1301,8 @@ h3 {
   transform: scale(1.03);
 }
 
-[data-page="nirala-gallery"] .gallery-grid {
+[data-page="nirala-gallery"] .gallery-grid,
+[data-page="apex-gallery"] .gallery-grid {
   display: block;
   column-count: 4;
   column-gap: 22px;
@@ -1284,11 +1311,14 @@ h3 {
 }
 
 [data-page="nirala-gallery"] .gallery-grid::before,
-[data-page="nirala-gallery"] .gallery-grid::after {
+[data-page="nirala-gallery"] .gallery-grid::after,
+[data-page="apex-gallery"] .gallery-grid::before,
+[data-page="apex-gallery"] .gallery-grid::after {
   content: none;
 }
 
-[data-page="nirala-gallery"] .gallery-item {
+[data-page="nirala-gallery"] .gallery-item,
+[data-page="apex-gallery"] .gallery-item {
   display: inline-block;
   width: 100%;
   break-inside: avoid;
@@ -1304,7 +1334,8 @@ h3 {
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-[data-page="nirala-gallery"] .gallery-item img {
+[data-page="nirala-gallery"] .gallery-item img,
+[data-page="apex-gallery"] .gallery-item img {
   width: 100%;
   height: auto;
   display: block;
@@ -1315,12 +1346,14 @@ h3 {
   transition: transform 0.4s ease;
 }
 
-[data-page="nirala-gallery"] .gallery-item:hover {
+[data-page="nirala-gallery"] .gallery-item:hover,
+[data-page="apex-gallery"] .gallery-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 24px 58px rgba(43, 43, 43, 0.2);
 }
 
-[data-page="nirala-gallery"] .gallery-item:hover img {
+[data-page="nirala-gallery"] .gallery-item:hover img,
+[data-page="apex-gallery"] .gallery-item:hover img {
   transform: scale(1.03);
 }
 
@@ -2125,17 +2158,18 @@ body.is-loaded .page-hero .reveal {
     font-size: 1.24rem;
   }
 
-  .nav-menu {
-    gap: 1.25rem;
+  .nav-menu,
+  .nav-links {
+    gap: 28px;
   }
 
   .nav-link {
-    font-size: 0.93rem;
+    font-size: 1.05rem;
   }
 
   .nav-cta {
-    padding-inline: 1.05rem;
-    font-size: 0.94rem;
+    padding: 14px 24px;
+    font-size: 0.98rem;
   }
 
   .page-hero-inner,
@@ -2280,7 +2314,7 @@ body.is-loaded .page-hero .reveal {
   }
 
   .navbar {
-    min-height: 80px;
+    min-height: 100px;
     padding: 0.68rem 1rem;
     border-radius: 28px;
     flex-wrap: wrap;
@@ -2376,15 +2410,29 @@ body.is-loaded .page-hero .reveal {
     --testimonial-gap: 14px;
   }
 
+  .nav-link,
+  .nav-links a {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .nav-cta,
+  .contact-btn {
+    font-size: 0.95rem;
+    padding: 12px 20px;
+  }
+
   .navbar > .logo {
-    width: 160px;
-    min-width: 160px;
-    height: 60px;
+    width: 240px;
+    min-width: 240px;
+    height: 84px;
+    padding-left: 14px;
   }
 
   .navbar > .logo img {
-    height: 60px;
-    transform: scale(1.5);
+    height: 72px;
+    margin-left: 12px;
+    transform: scale(1.85);
   }
 }
 
@@ -2518,19 +2566,22 @@ body.is-loaded .page-hero .reveal {
 }
 
 @media (max-width: 1100px) {
-  [data-page="nirala-gallery"] .gallery-grid {
+  [data-page="nirala-gallery"] .gallery-grid,
+  [data-page="apex-gallery"] .gallery-grid {
     column-count: 3;
   }
 }
 
 @media (max-width: 768px) {
-  [data-page="nirala-gallery"] .gallery-grid {
+  [data-page="nirala-gallery"] .gallery-grid,
+  [data-page="apex-gallery"] .gallery-grid {
     column-count: 2;
   }
 }
 
 @media (max-width: 520px) {
-  [data-page="nirala-gallery"] .gallery-grid {
+  [data-page="nirala-gallery"] .gallery-grid,
+  [data-page="apex-gallery"] .gallery-grid {
     column-count: 1;
   }
 }
