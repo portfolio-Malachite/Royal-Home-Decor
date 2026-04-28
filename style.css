@@ -651,6 +651,11 @@ h3 {
   background-image: url("images/featured/contact-hero.jpg");
 }
 
+.hero-apex-golf {
+  background-image: url("images/apex-golf-avenue.jpg");
+  background-position: center 42%;
+}
+
 .hero-grid,
 .page-hero-inner {
   position: relative;
@@ -709,11 +714,27 @@ h3 {
   gap: 1.2rem;
 }
 
-.hero-home .hero-copy,
-.hero-content {
+.hero-home .hero-copy {
   max-width: 900px;
   padding-left: 0;
   padding-right: 380px;
+}
+
+.hero-content {
+  max-width: 620px;
+  padding-left: 80px;
+  padding-right: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-left {
+  padding-left: 70px;
+}
+
+.hero-content .tag {
+  margin-left: 6px;
+  margin-bottom: 24px;
 }
 
 .hero-copy::before {
@@ -743,6 +764,10 @@ h3 {
   margin-bottom: 24px;
 }
 
+.hero-content h1 {
+  margin-left: 6px;
+}
+
 .hero-copy p,
 .page-hero-copy p {
   max-width: 620px;
@@ -754,6 +779,11 @@ h3 {
   max-width: 680px;
   font-size: 1.3rem;
   margin-bottom: 32px;
+}
+
+.hero-content p {
+  margin-left: 6px;
+  max-width: 560px;
 }
 
 .page-hero-inner--centered .page-hero-copy p {
@@ -1184,6 +1214,12 @@ h3 {
     url("images/projects/apex-apphabe-bedroom.jpg") center 52% / cover no-repeat;
 }
 
+[data-page="apex-golf-avenue-gallery"] .hero-gallery {
+  background:
+    linear-gradient(rgba(248, 245, 240, 0.78), rgba(248, 245, 240, 0.84)),
+    url("images/apex-golf-avenue.jpg") center 52% / cover no-repeat;
+}
+
 .gallery-page-hero {
   display: grid;
   gap: 1rem;
@@ -1302,7 +1338,9 @@ h3 {
 }
 
 [data-page="nirala-gallery"] .gallery-grid,
-[data-page="apex-gallery"] .gallery-grid {
+[data-page="apex-gallery"] .gallery-grid,
+[data-page="apex-golf-avenue-gallery"] .gallery-grid,
+[data-page="gaur-city-gallery"] .gallery-grid {
   display: block;
   column-count: 4;
   column-gap: 22px;
@@ -1313,12 +1351,18 @@ h3 {
 [data-page="nirala-gallery"] .gallery-grid::before,
 [data-page="nirala-gallery"] .gallery-grid::after,
 [data-page="apex-gallery"] .gallery-grid::before,
-[data-page="apex-gallery"] .gallery-grid::after {
+[data-page="apex-gallery"] .gallery-grid::after,
+[data-page="apex-golf-avenue-gallery"] .gallery-grid::before,
+[data-page="apex-golf-avenue-gallery"] .gallery-grid::after,
+[data-page="gaur-city-gallery"] .gallery-grid::before,
+[data-page="gaur-city-gallery"] .gallery-grid::after {
   content: none;
 }
 
 [data-page="nirala-gallery"] .gallery-item,
-[data-page="apex-gallery"] .gallery-item {
+[data-page="apex-gallery"] .gallery-item,
+[data-page="apex-golf-avenue-gallery"] .gallery-item,
+[data-page="gaur-city-gallery"] .gallery-item {
   display: inline-block;
   width: 100%;
   break-inside: avoid;
@@ -1335,7 +1379,9 @@ h3 {
 }
 
 [data-page="nirala-gallery"] .gallery-item img,
-[data-page="apex-gallery"] .gallery-item img {
+[data-page="apex-gallery"] .gallery-item img,
+[data-page="apex-golf-avenue-gallery"] .gallery-item img,
+[data-page="gaur-city-gallery"] .gallery-item img {
   width: 100%;
   height: auto;
   display: block;
@@ -1347,13 +1393,17 @@ h3 {
 }
 
 [data-page="nirala-gallery"] .gallery-item:hover,
-[data-page="apex-gallery"] .gallery-item:hover {
+[data-page="apex-gallery"] .gallery-item:hover,
+[data-page="apex-golf-avenue-gallery"] .gallery-item:hover,
+[data-page="gaur-city-gallery"] .gallery-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 24px 58px rgba(43, 43, 43, 0.2);
 }
 
 [data-page="nirala-gallery"] .gallery-item:hover img,
-[data-page="apex-gallery"] .gallery-item:hover img {
+[data-page="apex-gallery"] .gallery-item:hover img,
+[data-page="apex-golf-avenue-gallery"] .gallery-item:hover img,
+[data-page="gaur-city-gallery"] .gallery-item:hover img {
   transform: scale(1.03);
 }
 
@@ -1434,40 +1484,65 @@ h3 {
   margin: 0 auto;
 }
 
-.testimonial-track {
-  display: flex;
-  align-items: stretch;
-  gap: var(--testimonial-gap);
-  transition: transform 0.8s ease;
-  will-change: transform;
+.testimonial-slider {
+  overflow: hidden;
+  width: 100%;
 }
 
-.testimonial-slide {
-  flex: 0 0
-    calc(
-      (100% - (var(--testimonial-gap) * (var(--slides-per-view) - 1))) /
-        var(--slides-per-view)
-    );
-  min-width: 0;
+.testimonials-empty-state {
   display: flex;
-  align-items: stretch;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  padding: 2rem 1.5rem;
+  border-radius: 36px;
+  background: rgba(255, 255, 255, 0.52);
+  border: 1px solid rgba(184, 138, 68, 0.14);
+}
+
+.testimonials-empty {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 1.04rem;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.testimonial-track {
+  display: flex;
+  align-items: flex-start;
+  width: max-content;
+  gap: 20px;
+  will-change: transform;
+  animation: testimonial-slide 28s linear infinite;
+}
+
+.testimonial-slider:hover .testimonial-track {
+  animation-play-state: paused;
 }
 
 .testimonial-card {
+  min-width: calc((min(1280px, 100vw - 4rem) - 40px) / 3);
+  max-width: calc((min(1280px, 100vw - 4rem) - 40px) / 3);
+  display: block;
+  opacity: 1;
+  transform: none;
   width: 100%;
-  max-width: none;
-  min-height: 300px;
-  height: 100%;
+  height: auto;
+  min-height: auto;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   position: relative;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.72);
+  background: #f5f1eb;
   backdrop-filter: blur(18px);
   border: 1px solid rgba(184, 138, 68, 0.12);
-  border-radius: 36px;
-  padding: 42px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.06);
+  border-radius: 28px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
@@ -1488,28 +1563,60 @@ h3 {
   box-shadow: none;
 }
 
-.testimonial-head {
-  display: grid;
-  gap: 0.18rem;
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 16px;
 }
 
-.testimonial-head span {
-  color: var(--text-secondary);
-  font-size: 0.92rem;
+.profile {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
+.user-info h3,
+.testimonial-header h3 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.location {
+  display: block;
+  margin-top: 2px;
+  font-size: 14px;
+  color: #888;
+}
+
+.stars,
 .testimonial-stars {
   color: var(--gold);
-  letter-spacing: 0.12em;
-  font-size: 0.95rem;
-  margin-bottom: 0.85rem;
+  margin: 15px 0;
+  font-size: 18px;
+  letter-spacing: 0.08em;
 }
 
-.testimonial-card p {
-  color: var(--text-secondary);
-  line-height: 1.75;
-  font-size: 1rem;
+.review,
+.testimonial-text,
+.review-text {
   margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+@keyframes testimonial-slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 10px));
+  }
 }
 
 .carousel-controls {
@@ -2399,6 +2506,11 @@ body.is-loaded .page-hero .reveal {
     justify-content: center;
   }
 
+  .testimonial-card {
+    min-width: calc((min(1280px, 100vw - 3rem) - 20px) / 2);
+    max-width: calc((min(1280px, 100vw - 3rem) - 20px) / 2);
+  }
+
   .image-panel img {
     min-height: 420px;
   }
@@ -2408,6 +2520,18 @@ body.is-loaded .page-hero .reveal {
   .testimonial-wrapper {
     --slides-per-view: 1;
     --testimonial-gap: 14px;
+  }
+
+  .hero-content,
+  .hero-left {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .hero-content h1,
+  .hero-content p,
+  .hero-content .tag {
+    margin-left: 0;
   }
 
   .nav-link,
@@ -2482,6 +2606,8 @@ body.is-loaded .page-hero .reveal {
   }
 
   .testimonial-card {
+    min-width: min(100%, calc(100vw - 3rem));
+    max-width: min(100%, calc(100vw - 3rem));
     border-radius: 28px;
     padding: 30px 24px;
   }
@@ -2567,21 +2693,27 @@ body.is-loaded .page-hero .reveal {
 
 @media (max-width: 1100px) {
   [data-page="nirala-gallery"] .gallery-grid,
-  [data-page="apex-gallery"] .gallery-grid {
+  [data-page="apex-gallery"] .gallery-grid,
+  [data-page="apex-golf-avenue-gallery"] .gallery-grid,
+  [data-page="gaur-city-gallery"] .gallery-grid {
     column-count: 3;
   }
 }
 
 @media (max-width: 768px) {
   [data-page="nirala-gallery"] .gallery-grid,
-  [data-page="apex-gallery"] .gallery-grid {
+  [data-page="apex-gallery"] .gallery-grid,
+  [data-page="apex-golf-avenue-gallery"] .gallery-grid,
+  [data-page="gaur-city-gallery"] .gallery-grid {
     column-count: 2;
   }
 }
 
 @media (max-width: 520px) {
   [data-page="nirala-gallery"] .gallery-grid,
-  [data-page="apex-gallery"] .gallery-grid {
+  [data-page="apex-gallery"] .gallery-grid,
+  [data-page="apex-golf-avenue-gallery"] .gallery-grid,
+  [data-page="gaur-city-gallery"] .gallery-grid {
     column-count: 1;
   }
 }

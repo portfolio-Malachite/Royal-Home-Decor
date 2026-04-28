@@ -498,7 +498,6 @@ const markPageReady = () => {
 
 attachPageTransitions();
 initRevealObserver();
-initTestimonialsCarousel();
 initProjectGallery();
 initMahagunPageLightbox();
 initContactForms();
