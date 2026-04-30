@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects | Royal Home Decor</title>
+    <meta
+      name="description"
+      content="Explore Royal Home Decor projects across living rooms, bedrooms, kitchens, and office interiors."
+    />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Playfair+Display:wght@500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="projects">
+    <div class="page-shell">
+      <header class="site-header">
+        <nav class="navbar" aria-label="Primary navigation">
+          <a class="logo" href="index.html">
+            <img src="images/brand/logo.png" alt="Royal Home Decor Logo" />
+          </a>
+
+          <div class="nav-menu" id="primary-menu">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="projects.html" class="nav-link" aria-current="page">Projects</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+          </div>
+
+          <a href="contact.html" class="nav-cta">Contact Us</a>
+
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="primary-menu"
+          >
+            <span></span>
+            <span></span>
+          </button>
+        </nav>
+      </header>
+
+      <main class="page-main">
+        <section class="page-hero hero-projects">
+          <div class="container page-hero-inner page-hero-inner--centered">
+            <div class="page-hero-copy reveal reveal-up">
+              <span class="eyebrow">Our Portfolio</span>
+              <h1>A glimpse into the homes we’ve thoughtfully designed</h1>
+              <p>
+                Explore a curated selection of living rooms, bedrooms, kitchens, and workspaces — each
+                designed with a focus on comfort, clarity, and timeless appeal.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" data-project-gallery>
+          <div class="container">
+            <div class="section-header reveal reveal-up">
+              <span class="section-tag">Browse Projects</span>
+              <h2>Spaces Designed for Modern Living</h2>
+            </div>
+
+            <div class="filter-bar reveal reveal-up">
+              <button type="button" class="filter-chip is-active" data-filter="all">All</button>
+              <button type="button" class="filter-chip" data-filter="living">Living Room</button>
+              <button type="button" class="filter-chip" data-filter="bedroom">Bedroom</button>
+              <button type="button" class="filter-chip" data-filter="office">Office</button>
+              <button type="button" class="filter-chip" data-filter="kitchen">Kitchen</button>
+            </div>
+
+            <div class="gallery-grid">
+              <article class="project-card reveal reveal-up is-filter-visible" data-delay="0" data-project-card data-category="bedroom">
+                <div class="project-media">
+                  <img
+                    src="images/projects/mahagun-gallery/IMG_1216.jpg"
+                    alt="Mahagun Mascot Crossing Republic bedroom with Krishna artwork and upholstered bed"
+                    class="project-image--mahagun"
+                  />
+                </div>
+                <div class="project-overlay">
+                  <h3>Mahagun Mascot</h3>
+                  <a href="gallery.html" class="btn btn-primary btn-small project-cta">View All</a>
+                </div>
+              </article>
+
+              <article class="project-card reveal reveal-up is-filter-visible" data-delay="90" data-project-card data-category="kitchen">
+                <div class="project-media">
+                  <img
+                    src="images/projects/nirala-estate-kitchen.jpg"
+                    alt="Nirala Estate kitchen with premium black stone finishes and linear lighting"
+                    class="project-image--mahagun"
+                  />
+                </div>
+                <div class="project-overlay">
+
+                  <h3>Nirala Estate</h3>
+                  <a href="nirala-estate-gallery.html" class="btn btn-primary btn-small project-cta">View All</a>
+                </div>
+              </article>
+
+              <article class="project-card reveal reveal-up is-filter-visible" data-delay="180" data-project-card data-category="bedroom">
+                <div class="project-media">
+                  <img
+                    src="images/projects/apex-apphabe-bedroom.jpg"
+                    alt="Apex Apphabe bedroom with warm ceiling lights and TV wall setup"
+                    class="project-image--mahagun"
+                  />
+                </div>
+                <div class="project-overlay">
+                  <h3>Apex Apphabe</h3>
+                  <a href="apex-apphabe-gallery.html" class="btn btn-primary btn-small project-cta">View All</a>
+                </div>
+              </article>
+
+              <article class="project-card reveal reveal-up is-filter-visible" data-delay="270" data-project-card data-category="kitchen">
+                <div class="project-media project-image">
+                  <img
+                    src="images/apex-golf-avenue.jpg"
+                    alt="Apex Golf Avenue Interior"
+                  />
+                </div>
+                <div class="project-overlay project-content">
+                  <h3>Apex Golf Avenue</h3>
+                  <a href="apex-golf-avenue-gallery.html" class="btn btn-primary btn-small project-cta project-link">View All</a>
+                </div>
+              </article>
+
+              <article class="project-card reveal reveal-up is-filter-visible" data-delay="360" data-project-card data-category="kitchen">
+                <div class="project-media project-image">
+                  <img
+                    src="images/gaur-city/cover.jpg"
+                    alt="Gaur City Interior"
+                    class="project-image--mahagun"
+                  />
+                </div>
+                <div class="project-overlay project-content">
+                  <h3>Gaur City</h3>
+                  <a href="gaur-city-gallery.html" class="btn btn-primary btn-small project-cta project-btn">View All</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-soft">
+          <div class="container">
+            <div class="cta-banner reveal reveal-up">
+              <div>
+                <span class="section-tag">Design Consultation</span>
+                <h2>Inspired by what you see? Let’s create something just for you</h2>
+                <p>
+                  Share your ideas, layout, or inspiration with us, and we’ll guide you through the next steps
+                  with clarity and care.
+                </p>
+              </div>
+              <a href="contact.html" class="btn btn-primary">Enquire Now</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-grid">
+          <div class="footer-brand">
+            <a class="logo" href="index.html">Royal Home Decor</a>
+            <p>
+              Elegant interiors for modern living, designed with timeless
+              materials, thoughtful flow, and a luxury finish.
+            </p>
+          </div>
+
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+          </div>
+
+          <div class="footer-column">
+            <h3>Contact</h3>
+            <a href="mailto:hello@royalhomedecor.com">hello@royalhomedecor.com</a>
+            <a href="tel:+919999144571">+91 99991 44571</a>
+            <p class="footer-address">
+              Oc-838, Gaur City Center<br />
+              Near Gaur City Mall<br />
+              Greater Noida
+            </p>
+            <div class="social-icons">
+              <a
+                href="https://www.instagram.com/royalhomedecor66?utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/royalhomedecor66?mibextid=wwXIfr&amp;rdid=IGT4RkzPR2rV0oEG&amp;share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1GCKGMaSTh%2F%3Fmibextid%3DwwXIfr%26ref%3D1#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="container footer-bottom">
+          <p>&copy; <span data-year></span> Royal Home Decor. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+Royal Home Decor Asset Manifest
+
+Featured images
+- featured/home-hero.jpg -> https://unsplash.com/photos/KVyxW1Gd-48/download?force=true&w=1800
+- featured/about-preview.jpg -> https://unsplash.com/photos/6japTIjUQoI/download?force=true&w=1400
+- featured/about-hero.jpg -> https://unsplash.com/photos/LYSs7KkGzEs/download?force=true&w=1600
+- featured/contact-hero.jpg -> https://unsplash.com/photos/h3azXXxbGgo/download?force=true&w=1600
+
+Project images
+- projects/amber-residence.jpg -> https://unsplash.com/photos/3tu1nlIg4XM/download?force=true&w=1400
+- projects/ivory-loft.jpg -> https://unsplash.com/photos/BwGTy0gesOc/download?force=true&w=1400
+- projects/golden-haven.jpg -> https://unsplash.com/photos/crjt6vBgYeg/download?force=true&w=1400
+- projects/maison-elan.jpg -> https://unsplash.com/photos/f888opoBHUo/download?force=true&w=1400
+- projects/serene-vista.jpg -> https://unsplash.com/photos/lW_sTyEg6mM/download?force=true&w=1400
+- projects/regal-court.jpg -> https://unsplash.com/photos/nZuuucXkiBM/download?force=true&w=1400
+- projects/sunlit-dining.jpg -> https://unsplash.com/photos/LYSs7KkGzEs/download?force=true&w=1400
+- projects/studio-aurelia.jpg -> https://unsplash.com/photos/0chg0fWSkZ0/download?force=true&w=1400
+- projects/marble-bloom.jpg -> https://unsplash.com/photos/ECzFS9X4SP8/download?force=true&w=1400
+- projects/blanc-cuisine.jpg -> https://unsplash.com/photos/iUjIiP0sMTs/download?force=true&w=1400
+- projects/atlas-office.jpg -> https://unsplash.com/photos/5pUDesFhh64/download?force=true&w=1400
+- projects/chandelier-salon.jpg -> https://unsplash.com/photos/l2JpNQF_qDc/download?force=true&w=1400
+
+Team images
+- team/aarav-sharma.jpg -> https://randomuser.me/api/portraits/men/32.jpg
+- team/meera-kapoor.jpg -> https://randomuser.me/api/portraits/women/44.jpg
+- team/rohan-mehta.jpg -> https://randomuser.me/api/portraits/men/46.jpg
+- team/isha-sen.jpg -> https://randomuser.me/api/portraits/women/68.jpg
+
+Client images
+- clients/client-01.jpg -> https://randomuser.me/api/portraits/women/12.jpg
+- clients/client-02.jpg -> https://randomuser.me/api/portraits/men/15.jpg
+- clients/client-03.jpg -> https://randomuser.me/api/portraits/women/22.jpg
+- clients/client-04.jpg -> https://randomuser.me/api/portraits/men/27.jpg
+- clients/client-05.jpg -> https://randomuser.me/api/portraits/women/35.jpg
+- clients/client-06.jpg -> https://randomuser.me/api/portraits/men/41.jpg
+- clients/client-07.jpg -> https://randomuser.me/api/portraits/women/53.jpg
+- clients/client-08.jpg -> https://randomuser.me/api/portraits/men/58.jpg
+- clients/client-09.jpg -> https://randomuser.me/api/portraits/women/63.jpg
+- clients/client-10.jpg -> https://randomuser.me/api/portraits/men/72.jpg
