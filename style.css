@@ -465,10 +465,20 @@ h3 {
   height: 105px;
   width: auto;
   object-fit: contain;
+  display: block;
   margin-left: 26px;
   transform: scale(2.35);
-  transform-origin: left center;
-  display: block;
+  transform-origin: center;
+}
+
+.navbar > .logo.logo--text {
+  width: auto;
+  min-width: 0;
+  height: auto;
+  overflow: visible;
+  padding-left: 0;
+  margin-right: 1rem;
+  line-height: 1.1;
 }
 
 .navbar,
@@ -1001,7 +1011,8 @@ h3 {
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
 }
 
-.image-panel img {
+.image-panel img,
+.about-image {
   min-height: 520px;
   object-fit: cover;
   border-radius: var(--radius-xl);
@@ -1280,6 +1291,50 @@ h3 {
     url("images/projects/apex-apphabe-bedroom.jpg") center 52% / cover no-repeat;
 }
 
+.apex-apphabe-gallery-shell {
+  width: min(90%, 1200px);
+  max-width: 1200px;
+}
+
+.apex-apphabe-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.apex-apphabe-gallery-card {
+  margin: 0;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #faf6ef 0%, #f2e9dd 100%);
+  box-shadow: 0 18px 40px rgba(43, 43, 43, 0.08);
+}
+
+.apex-apphabe-gallery-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.apex-apphabe-gallery-card:hover img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 1100px) {
+  .apex-apphabe-gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .apex-apphabe-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 [data-page="apex-golf-avenue-gallery"] .hero-gallery {
   background:
     linear-gradient(rgba(248, 245, 240, 0.78), rgba(248, 245, 240, 0.84)),
@@ -1344,133 +1399,58 @@ h3 {
   pointer-events: none;
 }
 
-[data-page="gallery"] .gallery-grid {
-  display: block;
-  max-width: 1280px;
+.mahagun-gallery-page .container {
+  width: min(90%, 1200px);
+  max-width: 1200px;
+}
+
+[data-mahagun-page-gallery] {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-[data-page="gallery"] .gallery-grid::before,
-[data-page="gallery"] .gallery-grid::after {
+[data-mahagun-page-gallery]::before,
+[data-mahagun-page-gallery]::after {
   content: none;
 }
 
-[data-page="gallery"] .gallery-row {
-  display: flex;
-  gap: 24px;
-  justify-content: center;
-  margin-bottom: 24px;
-}
-
-[data-page="gallery"] .gallery-row:last-child {
-  margin-bottom: 0;
-}
-
-[data-page="gallery"] .bottom-row {
-  justify-content: center;
-}
-
-[data-page="gallery"] .gallery-row .gallery-item {
-  width: 300px;
-  flex: 0 0 300px;
+[data-mahagun-page-gallery] .gallery-item {
+  position: relative;
+  display: block;
+  width: 100%;
   margin: 0;
+  padding: 0;
+  border: 0;
   border-radius: 28px;
   overflow: hidden;
-  background: #fff;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
-  border: 0;
-  padding: 0;
+  aspect-ratio: 3 / 4;
+  background: linear-gradient(180deg, #faf6ef 0%, #f1e8db 100%);
+  box-shadow: 0 18px 40px rgba(43, 43, 43, 0.08);
+  cursor: pointer;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-[data-page="gallery"] .gallery-item img {
+[data-mahagun-page-gallery] .gallery-item img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
-  border-radius: 28px;
-  max-height: none;
-  aspect-ratio: auto;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.45s ease;
 }
 
-[data-page="gallery"] .gallery-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 24px 58px rgba(43, 43, 43, 0.2);
+[data-mahagun-page-gallery] .gallery-item:hover,
+[data-mahagun-page-gallery] .gallery-item:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 56px rgba(43, 43, 43, 0.16);
 }
 
-[data-page="gallery"] .gallery-item:hover img {
-  transform: scale(1.03);
-}
-
-[data-page="nirala-gallery"] .gallery-grid,
-[data-page="apex-gallery"] .gallery-grid,
-[data-page="apex-golf-avenue-gallery"] .gallery-grid,
-[data-page="gaur-city-gallery"] .gallery-grid {
-  display: block;
-  column-count: 4;
-  column-gap: 22px;
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-[data-page="nirala-gallery"] .gallery-grid::before,
-[data-page="nirala-gallery"] .gallery-grid::after,
-[data-page="apex-gallery"] .gallery-grid::before,
-[data-page="apex-gallery"] .gallery-grid::after,
-[data-page="apex-golf-avenue-gallery"] .gallery-grid::before,
-[data-page="apex-golf-avenue-gallery"] .gallery-grid::after,
-[data-page="gaur-city-gallery"] .gallery-grid::before,
-[data-page="gaur-city-gallery"] .gallery-grid::after {
-  content: none;
-}
-
-[data-page="nirala-gallery"] .gallery-item,
-[data-page="apex-gallery"] .gallery-item,
-[data-page="apex-golf-avenue-gallery"] .gallery-item,
-[data-page="gaur-city-gallery"] .gallery-item {
-  display: inline-block;
-  width: 100%;
-  break-inside: avoid;
-  -webkit-column-break-inside: avoid;
-  page-break-inside: avoid;
-  margin: 0 0 22px;
-  border-radius: 28px;
-  overflow: hidden;
-  background: #fff;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
-  border: 0;
-  padding: 0;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-[data-page="nirala-gallery"] .gallery-item img,
-[data-page="apex-gallery"] .gallery-item img,
-[data-page="apex-golf-avenue-gallery"] .gallery-item img,
-[data-page="gaur-city-gallery"] .gallery-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 28px;
-  max-height: none;
-  aspect-ratio: auto;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-[data-page="nirala-gallery"] .gallery-item:hover,
-[data-page="apex-gallery"] .gallery-item:hover,
-[data-page="apex-golf-avenue-gallery"] .gallery-item:hover,
-[data-page="gaur-city-gallery"] .gallery-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 24px 58px rgba(43, 43, 43, 0.2);
-}
-
-[data-page="nirala-gallery"] .gallery-item:hover img,
-[data-page="apex-gallery"] .gallery-item:hover img,
-[data-page="apex-golf-avenue-gallery"] .gallery-item:hover img,
-[data-page="gaur-city-gallery"] .gallery-item:hover img {
-  transform: scale(1.03);
+[data-mahagun-page-gallery] .gallery-item:hover img,
+[data-mahagun-page-gallery] .gallery-item:focus-visible img {
+  transform: scale(1.04);
 }
 
 .mahagun-lightbox {
@@ -1515,6 +1495,7 @@ h3 {
   font-size: 2rem;
   line-height: 1;
 }
+
 
 .testimonials-section {
   position: relative;
@@ -1686,6 +1667,51 @@ h3 {
   justify-content: center;
   gap: 0.5rem;
   flex: 1;
+}
+
+.brands-section {
+  text-align: center;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.brands-slider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.brands-track {
+  display: flex;
+  gap: 60px;
+  animation: scroll 25s linear infinite;
+  align-items: center;
+  width: max-content;
+}
+
+.brand-item {
+  width: 140px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 140px;
+}
+
+.brand-item img {
+  max-width: 100%;
+  max-height: 50px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.brand-item:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1);
 }
 
 .carousel-dot,
@@ -2109,7 +2135,7 @@ h3 {
 
 .map-placeholder {
   position: relative;
-  min-height: 280px;
+  min-height: 340px;
   overflow: hidden;
   border-radius: var(--radius-lg);
   background:
@@ -2145,23 +2171,28 @@ h3 {
 
 .map-overlay {
   position: absolute;
+  top: 1.2rem;
   left: 1.2rem;
   right: 1.2rem;
   bottom: 1.2rem;
   display: grid;
   gap: 0.35rem;
-  padding: 1rem 1.05rem;
+  padding: 0;
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.84);
   backdrop-filter: blur(14px);
+  overflow: hidden;
 }
 
-.map-overlay span {
-  color: var(--gold);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.map-inner {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.map-inner iframe {
+  display: block;
 }
 
 .site-footer {
@@ -2195,14 +2226,24 @@ h3 {
 
 .footer-brand-block {
   max-width: 360px;
+  gap: 0.6rem;
 }
 
-.footer-brand-name {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(1.6rem, 2vw, 1.95rem);
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  color: var(--text-primary);
+.footer-contact-block {
+  gap: 0.75rem;
+}
+
+.footer-logo {
+  display: inline-flex;
+  width: 180px;
+  max-width: 100%;
+}
+
+.footer-logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .footer-brand-text {
@@ -2234,6 +2275,12 @@ h3 {
   line-height: 1.8;
 }
 
+.footer-contact-link,
+.footer-address {
+  display: block;
+  margin-bottom: 8px;
+}
+
 .footer-links-list a:hover,
 .footer-links-list a:focus-visible,
 .footer-contact-link:hover,
@@ -2242,42 +2289,7 @@ h3 {
 }
 
 .footer-address {
-  margin: 0;
-}
-
-.footer-social {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  padding-top: 0.35rem;
-}
-
-.footer-social a {
-  width: 42px;
-  height: 42px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
-  color: #fff;
-  box-shadow: 0 12px 30px rgba(184, 138, 68, 0.2);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    background 0.3s ease;
-}
-
-.footer-social a:hover,
-.footer-social a:focus-visible {
-  color: #fff;
-  background: #111;
-  transform: translateY(-3px);
-  box-shadow: 0 16px 30px rgba(17, 17, 17, 0.18);
-}
-
-.footer-social i {
-  font-size: 1rem;
+  margin: 0 0 8px;
 }
 
 .footer-bottom {
@@ -2290,6 +2302,142 @@ h3 {
   color: var(--text-secondary);
   font-size: 0.94rem;
   text-align: center;
+}
+
+.fab-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+}
+
+.fab-main {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #b68c4a;
+  color: #fff;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  animation: pulse 2s infinite;
+}
+
+.fab-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.fab-container:hover .fab-options {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.fab-container:hover .fab-main {
+  transform: rotate(45deg) scale(1.1);
+  animation: none;
+}
+
+.fab-item {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  transform: scale(0.9);
+}
+
+.fab-item:hover {
+  transform: scale(1.15) translateX(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.fab-item i {
+  transition: transform 0.3s ease;
+}
+
+.fab-item:hover i {
+  transform: rotate(10deg) scale(1.2);
+}
+
+.fab-container:hover .fab-item {
+  animation: fadeUp 0.4s ease forwards;
+}
+
+.fab-container:hover .fab-item:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.fab-container:hover .fab-item:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.fab-container:hover .fab-item:nth-child(3) {
+  animation-delay: 0.15s;
+}
+
+.whatsapp {
+  background: #25d366;
+}
+
+.whatsapp:hover {
+  box-shadow: 0 0 15px rgba(37, 211, 102, 0.6);
+}
+
+.instagram {
+  background: #e1306c;
+}
+
+.instagram:hover {
+  box-shadow: 0 0 15px rgba(225, 48, 108, 0.6);
+}
+
+.facebook {
+  background: #1877f2;
+}
+
+.facebook:hover {
+  box-shadow: 0 0 15px rgba(24, 119, 242, 0.6);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(182, 140, 74, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(182, 140, 74, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(182, 140, 74, 0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 @media (max-width: 860px) {
@@ -2307,8 +2455,9 @@ h3 {
     max-width: 100%;
   }
 
-  .footer-social {
-    justify-content: center;
+  .fab-container {
+    bottom: 20px;
+    right: 20px;
   }
 }
 
@@ -2657,7 +2806,8 @@ body.is-loaded .page-hero .reveal {
     gap: 22px;
   }
 
-  .image-panel img {
+  .image-panel img,
+  .about-image {
     min-height: 420px;
   }
 }
@@ -2692,12 +2842,21 @@ body.is-loaded .page-hero .reveal {
     min-width: 240px;
     height: 84px;
     padding-left: 14px;
+    margin-right: 0.5rem;
   }
 
   .navbar > .logo img {
     height: 72px;
-    margin-left: 12px;
-    transform: scale(1.85);
+    margin-left: 18px;
+    transform: scale(2.1);
+  }
+
+  .navbar > .logo.logo--text {
+    width: auto;
+    min-width: 0;
+    height: auto;
+    padding-left: 0;
+    margin-right: 0.75rem;
   }
 
   .about-section h1,
@@ -2796,7 +2955,8 @@ body.is-loaded .page-hero .reveal {
     padding: 1.4rem;
   }
 
-  .image-panel img {
+  .image-panel img,
+  .about-image {
     min-height: 320px;
   }
 
@@ -2828,53 +2988,6 @@ body.is-loaded .page-hero .reveal {
   section,
   .section {
     padding: var(--space-sm) 0;
-  }
-}
-
-@media (max-width: 1320px) {
-  [data-page="gallery"] .gallery-row {
-    flex-wrap: wrap;
-  }
-
-  [data-page="gallery"] .gallery-row .gallery-item {
-    width: calc(50% - 12px);
-    flex: 1 1 calc(50% - 12px);
-    max-width: 360px;
-  }
-}
-
-@media (max-width: 760px) {
-  [data-page="gallery"] .gallery-row .gallery-item {
-    width: 100%;
-    flex: 1 1 100%;
-    max-width: 440px;
-  }
-}
-
-@media (max-width: 1100px) {
-  [data-page="nirala-gallery"] .gallery-grid,
-  [data-page="apex-gallery"] .gallery-grid,
-  [data-page="apex-golf-avenue-gallery"] .gallery-grid,
-  [data-page="gaur-city-gallery"] .gallery-grid {
-    column-count: 3;
-  }
-}
-
-@media (max-width: 768px) {
-  [data-page="nirala-gallery"] .gallery-grid,
-  [data-page="apex-gallery"] .gallery-grid,
-  [data-page="apex-golf-avenue-gallery"] .gallery-grid,
-  [data-page="gaur-city-gallery"] .gallery-grid {
-    column-count: 2;
-  }
-}
-
-@media (max-width: 520px) {
-  [data-page="nirala-gallery"] .gallery-grid,
-  [data-page="apex-gallery"] .gallery-grid,
-  [data-page="apex-golf-avenue-gallery"] .gallery-grid,
-  [data-page="gaur-city-gallery"] .gallery-grid {
-    column-count: 1;
   }
 }
 

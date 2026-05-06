@@ -114,7 +114,7 @@
                 <p>
                   Oc-838, Gaur City Center<br />
                   Near Gaur City Mall<br />
-                  Greater Noida
+                  Greater Noida 201318
                 </p>
               </div>
 
@@ -126,20 +126,22 @@
               <div class="detail-card">
                 <h3>Phone</h3>
                 <a href="tel:+919999144571">+91 99991 44571</a>
+                <br>
+                <a href="tel:+919999144571">+91 99535 21571</a>
               </div>
 
               <div class="map-placeholder">
                 <div class="map-overlay">
-                  <span>Google Maps Placeholder</span>
-                  <strong>Royal Home Decor Studio</strong>
-                  <a
-                    href="https://maps.google.com/?q=Oc-838,+Gaur+City+Center,+Greater+Noida"
-                    target="_blank"
-                    rel="noreferrer"
-                    class="inline-link"
-                  >
-                    Open in Maps
-                  </a>
+                  <div class="map-inner">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.815336201767!2d77.42496727621386!3d28.605316175679597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cef1341438e9d%3A0x5f7dd3497a8f0d0a!2sGaur%20City%20Center!5e0!3m2!1sen!2sin!4v1778048298955!5m2!1sen!2sin"
+                      width="100%"
+                      height="100%"
+                      style="border:0; border-radius: 20px;"
+                      allowfullscreen=""
+                      loading="lazy"
+                    ></iframe>
+                  </div>
                 </div>
               </div>
             </aside>
@@ -186,7 +188,9 @@
         <div class="footer-container">
           <div class="footer-layout">
             <div class="footer-brand-block">
-              <a class="footer-brand-name" href="index.html">Royal Home Decor</a>
+              <a class="footer-logo" href="index.html">
+                <img src="images/brand/logo.png" alt="Royal Home Decor Logo" />
+              </a>
               <p class="footer-brand-text">
                 Elegant interiors for modern living, designed with timeless
                 materials, thoughtful flow, and a luxury finish.
@@ -209,29 +213,12 @@
                 >hello@royalhomedecor.com</a
               >
               <a class="footer-contact-link" href="tel:+919999144571">+91 99991 44571</a>
+              <a class="footer-contact-link" href="tel:+919953521571">+91 99535 21571</a>
               <p class="footer-address">
                 Oc-838, Gaur City Center<br />
                 Near Gaur City Mall<br />
-                Greater Noida
+                Greater Noida 201318
               </p>
-              <div class="footer-social">
-                <a
-                  href="https://www.instagram.com/royalhomedecor66"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                >
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <a
-                  href="https://www.facebook.com/royalhomedecor66"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Facebook"
-                >
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </div>
             </div>
           </div>
 
@@ -240,6 +227,42 @@
           </div>
         </div>
       </footer>
+    </div>
+
+    <div class="fab-container">
+      <div class="fab-options">
+        <a
+          href="https://wa.me/919999144571"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="fab-item whatsapp"
+          aria-label="WhatsApp"
+        >
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a
+          href="https://www.instagram.com/royalhomedecor66"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="fab-item instagram"
+          aria-label="Instagram"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a
+          href="https://www.facebook.com/royalhomedecor66"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="fab-item facebook"
+          aria-label="Facebook"
+        >
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </div>
+
+      <button class="fab-main" id="fabToggle" aria-label="Toggle social menu">
+        <i class="fas fa-plus"></i>
+      </button>
     </div>
 
     <script src="script.js"></script>
