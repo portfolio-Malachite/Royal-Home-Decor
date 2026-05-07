@@ -1904,10 +1904,29 @@ h3 {
   letter-spacing: 0.08em;
 }
 
+.team-section-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-section-container .section-header {
+  width: 100%;
+}
+
 .team-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.team-grid > .team-card {
+  flex: 0 1 360px;
+  width: min(100%, 360px);
 }
 
 .team-card {
@@ -1915,7 +1934,8 @@ h3 {
   border-radius: var(--radius-lg);
   background: rgba(255, 255, 255, 0.82);
   box-shadow: 0 18px 42px rgba(43, 43, 43, 0.08);
-  transition: transform var(--transition), box-shadow var(--transition);
+  overflow: hidden;
+  transition: all 0.4s ease;
 }
 
 .team-card img {
@@ -1923,6 +1943,18 @@ h3 {
   object-fit: cover;
   border-radius: 22px;
   margin-bottom: 1rem;
+  transition: transform 0.4s ease;
+}
+
+.team-card:hover,
+.team-card:focus-within {
+  transform: translateY(-10px);
+  box-shadow: 0 24px 52px rgba(43, 43, 43, 0.14);
+}
+
+.team-card:hover img,
+.team-card:focus-within img {
+  transform: scale(1.05);
 }
 
 .team-card span {
@@ -2333,16 +2365,11 @@ h3 {
   flex-direction: column;
   gap: 12px;
   margin-bottom: 10px;
-  opacity: 0;
   pointer-events: none;
-  transform: translateY(20px);
-  transition: all 0.3s ease;
 }
 
 .fab-container:hover .fab-options {
-  opacity: 1;
   pointer-events: auto;
-  transform: translateY(0);
 }
 
 .fab-container:hover .fab-main {
@@ -2360,12 +2387,14 @@ h3 {
   color: #fff;
   font-size: 18px;
   text-decoration: none;
-  transition: all 0.3s ease;
-  transform: scale(0.9);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.9);
+  transition: all 0.35s ease;
 }
 
 .fab-item:hover {
-  transform: scale(1.15) translateX(-5px);
+  transform: translateY(0) scale(1.15) translateX(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -2378,19 +2407,21 @@ h3 {
 }
 
 .fab-container:hover .fab-item {
-  animation: fadeUp 0.4s ease forwards;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
 }
 
 .fab-container:hover .fab-item:nth-child(1) {
-  animation-delay: 0.05s;
+  transition-delay: 0.1s;
 }
 
 .fab-container:hover .fab-item:nth-child(2) {
-  animation-delay: 0.1s;
+  transition-delay: 0.2s;
 }
 
 .fab-container:hover .fab-item:nth-child(3) {
-  animation-delay: 0.15s;
+  transition-delay: 0.3s;
 }
 
 .whatsapp {
@@ -2426,17 +2457,6 @@ h3 {
   }
   100% {
     box-shadow: 0 0 0 0 rgba(182, 140, 74, 0);
-  }
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px) scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
   }
 }
 
@@ -2598,10 +2618,6 @@ body.is-loaded .page-hero .reveal {
   .value-grid,
   .timeline,
   .gallery-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .team-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -2897,8 +2913,7 @@ body.is-loaded .page-hero .reveal {
   .project-grid--three,
   .value-grid,
   .timeline,
-  .gallery-grid,
-  .team-grid {
+  .gallery-grid {
     grid-template-columns: 1fr;
   }
 
